@@ -1,0 +1,179 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #172847;
+  display: flex;
+}
+
+/* Nav section of the dashboard (left)*/
+
+nav {
+  width: 180px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav>ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav>ul>li {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  margin: 24px 0;
+}
+
+nav>ul>li>img {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+}
+
+#account {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+}
+
+#logo {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+}
+
+/* Main section of the dashboard (right)*/
+
+main {
+  width: 100%;
+  background-color: #F9F5F5;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 40px 0 0 40px;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 50px 0 0 50px;
+}
+
+/* Rows of the main */
+
+section {
+  display: flex;
+  justify-content: space-around;
+  height: 450px;
+}
+
+/* Elements of the rows of the main */
+
+section>div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+#comments {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Each comment */
+
+#comments>li {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #a0a0a0;
+  height: 104px;
+  width: 400px;
+  display: flex;
+  margin: 16px 0;
+  
+}
+
+#comments>li>img {
+  border-radius: 50%;
+  margin: 25px;
+}
+
+/* The description class refers to the text section of the comment */
+
+.description {
+  padding: 8px 16px 8px 0;
+  flex-grow: 1;
+}
+
+.top>h4 {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.description>.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description label {
+  font-size: .8rem;
+}
+
+.description p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+/* Live Stocks */
+
+#live {
+  flex-basis: 50%;
+}
+
+select {
+  width: 100%;
+  max-width: 200px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  text-align-last: center;
+}
+
+/* Category selection */
+
+
+#selectHistory {
+  flex-direction: row;
+  flex-grow: 1;
+  margin-right: 15px;
+  justify-content: center;
+}
+
+#selectHistory>label {
+  margin: 0 15px;
+}
+
+#historyChart {
+  width: 100%;
+  height: 100%;
+  flex-grow: 4;
+  background-color: white;
+}
