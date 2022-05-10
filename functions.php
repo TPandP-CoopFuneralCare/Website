@@ -17,7 +17,7 @@ function getConnection()
 
 function initSession()
 {
-	ini_set("session.save_path", getcwd() . "/sessionData");
+	ini_set("session.save_path", "/home/vol1000_5/epizy.com/epiz_31524034/htdocs/sessionData");
 	ob_start();
 	session_start();
 }
@@ -171,7 +171,7 @@ function buildNav()
 					</a>
 
 					<ul id="stocks">
-						<a href="./chat.php"><li>Conversations</li></a>
+						<a href="./conversation.php"><li>Conversations</li></a>
 						<a href="./alerts.php"><li>Admin</li></a>
 						<a href="./basket.php"><li>Basket</li></a>
 					</ul>
@@ -207,7 +207,7 @@ function buildNav()
 					</a>
 
 					<ul id="stocks">
-						<a href="./chat.php"><li>Conversations</li></a>
+						<a href="./conversation.php"><li>Conversations</li></a>
 					</ul>
         </li>
     </ul>
@@ -459,7 +459,7 @@ function buildConversations()
 		$stmt->execute();
 		while ($comment = $stmt->fetchObject()) {
 
-			$result .= "<a href=\"chat.php?id=$comment->ProductID\" class=\"chatroom\"><h4>Chatroom for $comment->name</h4></a>";
+			$result .= "<a href=\"conversation.php?id=$comment->ProductID\" class=\"chatroom\"><h4>Chatroom for $comment->name</h4></a>";
 		}
 	} catch (Exception $e) {
 		$result .= "<p>$e->getMessage()</p>/n";
@@ -473,7 +473,7 @@ function buildChatbox($productID)
 {
 	$text = isset($_COOKIE['message' . $productID]) ? $_COOKIE['message' . $productID] : '';
 	return "<section id=\"chatbox\">
-	<form action=\"chat.php?id=$productID\" method=\"post\">
+	<form action=\"conversation.php?id=$productID\" method=\"post\">
 		<textarea rows=\"5\" placeholder=\"Type in your comment\" onkeyup='toMemory($productID)' id=\"textarea\" name=\"chatText\">$text</textarea>
 		<button type=\"submit\">Send</button>
 	</form>
