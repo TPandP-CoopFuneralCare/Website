@@ -20,24 +20,31 @@ nav {
   align-items: center;
 }
 
-nav>ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-nav>ul>li {
-  display: flex;
+nav>ul li {
+  position: relative;
   flex-direction: column;
   color: white;
   align-items: center;
-  margin: 24px 0;
+  margin: 16px 0;
 }
 
-nav>ul>li>img {
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
+nav a {
+  text-decoration: none;
+  color: white;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+nav>ul>li img {
+  width: 25%;
+  margin-bottom: 8px;
 }
 
 #account {
@@ -47,9 +54,28 @@ nav>ul>li>img {
 }
 
 #logo {
-  background-color: white;
   height: 100px;
   width: 100px;
+}
+
+#stocks {
+  visibility: hidden;
+  padding: 0;
+  background-color: #172847;
+}
+
+#stocks:hover,
+nav a:hover~#stocks {
+  visibility: visible;
+}
+
+#stocks li {
+  padding: 8px 8px;
+  margin: 0;
+}
+
+#stocks a:hover {
+  background-color: #01B1DD;
 }
 
 /* Main section of the dashboard (right)*/
@@ -59,7 +85,6 @@ main {
   background-color: #F9F5F5;
   flex-grow: 1;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   border-radius: 40px 0 0 40px;
 }
@@ -69,17 +94,23 @@ h1 {
   margin: 50px 0 0 50px;
 }
 
+h3 {
+  margin-left: 24px;
+}
+
 /* Rows of the main */
 
-section {
+.dashboardRow {
   display: flex;
-  justify-content: space-around;
+
   height: 450px;
+  justify-content: space-around;
+  flex-basis: 50%;
 }
 
 /* Elements of the rows of the main */
 
-section>div {
+.dashboardRow>div {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -94,19 +125,27 @@ h2 {
   margin: 0;
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /* Each comment */
 
-#comments>li {
+#comments>li,
+.chatroom {
   background-color: white;
   border-radius: 10px;
   border: 1px solid #a0a0a0;
-  height: 104px;
-  width: 400px;
+  width: 300px;
   display: flex;
-  margin: 16px 0;
-  
+  justify-content: center;
+}
+
+.chatroom {
+  text-decoration: none;
+  color: black;
+  width: auto;
 }
 
 #comments>li>img {
@@ -117,8 +156,9 @@ h2 {
 /* The description class refers to the text section of the comment */
 
 .description {
-  padding: 8px 16px 8px 0;
-  flex-grow: 1;
+  padding: 8px 16px;
+  /* flex-grow: 1; */
+  flex-direction: column;
 }
 
 .top>h4 {
@@ -126,7 +166,8 @@ h2 {
   font-weight: 600;
 }
 
-.description>.top {
+.description>.top,
+.message>.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -140,8 +181,8 @@ h2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 300px;
 }
+
 /* Live Stocks */
 
 #live {
@@ -161,19 +202,274 @@ select {
 
 
 #selectHistory {
-  flex-direction: row;
-  flex-grow: 1;
+  /* flex-direction: row; */
+  /* flex-grow: 1; */
   margin-right: 15px;
   justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 50px 50px;
+  gap: 15px;
+  align-self: center;
 }
 
 #selectHistory>label {
   margin: 0 15px;
 }
 
-#historyChart {
-  width: 100%;
-  height: 100%;
-  flex-grow: 4;
+#liveChartParent {
+  position: relative;
+  align-self: stretch;
+
+  overflow-y: scroll;
+}
+
+#historyChartParent {
+  position: relative;
+  flex-basis: 47%;
+  align-items: stretch;
+  justify-content: end;
+  overflow-y: scroll;
+}
+
+#updateStocks {}
+
+/* chat.php */
+
+.chat {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#chatCategories {
+  display: flex;
+  margin: 32px;
+  justify-content: center;
+  gap: 24px;
+}
+
+#chatrooms {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: auto auto auto;
+  padding: 16px;
+  flex-grow: 1;
+}
+
+#messages {
+  overflow-y: scroll;
+  flex-grow: 1;
+  position: relative;
+}
+
+#chatbox {
+  display: flex;
+  justify-content: center;
+}
+
+#chatbox form {
+  background-color: #C7E7F2;
+  flex-grow: 1;
+  margin: 0 160px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chatbox textarea {
+  border: none;
+  background-color: #C7E7F2;
+  margin: 16px 0 16px 32px;
+  flex-grow: 1;
+  resize: none;
+}
+
+#chatbox textarea:focus {
+  outline: none;
+}
+
+#chatbox button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin: 16px;
+}
+
+.message {
+  width: 50vw;
+  padding: 8px 16px;
+  margin: 24px;
+  flex-direction: column;
   background-color: white;
+  border-radius: 10px;
+}
+
+/* basket.php */
+
+#basket {
+  flex-grow: 1;
+  background-color: white;
+  margin: 80px 160px;
+  border-radius: 32px;
+  box-shadow: 0px 0px 7px 1px #b0b0b0;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+#basket>div {
+  position: relative;
+  flex-grow: 1;
+  padding: 40px;
+}
+
+#basket>div>div {
+  background-color: #FFF1EB;
+  width: fit-content;
+  padding-top: 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px 2px #d0d0d0;
+}
+
+#basket>form {
+  display: flex;
+  justify-content: center;
+}
+
+#basket .top {
+  padding: 0 24px;
+}
+
+#amount {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+#amount button {
+  background-color: transparent;
+
+  border: none;
+}
+
+#basket label {
+  font-weight: 600;
+}
+
+#basket #amount label {
+  font-size: 1.2em;
+}
+
+#cancel {
+  width: 100%;
+  border: none;
+  background-color: #D6333B;
+  padding: 8px 0;
+  border-radius: 0 0 16px 16px;
+}
+
+#basket aside {
+  display: none;
+
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  bottom: 0;
+  left: 0;
+  padding: 16px 0;
+
+  background-color: white;
+  align-items: center;
+}
+
+#basket aside div {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto auto;
+}
+
+#basket aside select {
+  border-radius: 0;
+}
+
+#basket aside p {
+  margin: 0;
+}
+
+#basket aside button {
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid white;
+  padding: 10px;
+
+
+
+  margin-top: 20px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-content: center;
+  font-weight: 600;
+  background-color: #01B1DD;
+  font-size: 1em;
+  color: white;
+}
+
+#basket form button {
+  display: flex;
+  position: relative;
+  border-radius: 48px 48px 0 0;
+  border: 5px solid black;
+  padding: 16px 120px;
+  font-weight: 600;
+  background-color: white;
+  font-size: 1.3em;
+  align-items: center;
+}
+
+#basket form button>img {
+  position: absolute;
+  left: 48px;
+}
+
+.grid {
+
+  max-width: 666px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 8px;
+  background-color: white;
+  padding: 8px;
+  border: 1px solid #6a6a6a5e;
+}
+
+.grid p {
+  text-align: center;
+  margin: 0;
+}
+
+.grid input {
+
+  width: 80px;
+}
+
+.gridMembers {
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  max-width: 800px;
+}
+
+.productName {
+  min-width: 240px;
+  text-align: start !important;
+}
+
+.CreateProduct {
+
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
