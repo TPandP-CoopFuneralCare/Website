@@ -177,7 +177,10 @@ function buildNav()
 					</ul>
         </li>
     </ul>
-    <div id="account"></div>
+    <a href="../account.php" id="account">
+						<img src="../Icons/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="Account icon" />
+						<label>Account</label>
+					</a>
   </nav>';
 	} else {
 		return '<nav>
@@ -211,7 +214,10 @@ function buildNav()
 					</ul>
         </li>
     </ul>
-    <div id="account"></div>
+    <a href="../account.php" id="account">
+						<img src="../Icons/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="Account icon" />
+						<label>Account</label>
+					</a>
   </nav>';
 	}
 }
