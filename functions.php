@@ -340,12 +340,12 @@ function getCommentDescription($dbConn, $comment)
 				$stmt1 = $dbConn->prepare($query1);
 				$stmt1->execute(array(':productid' => $comment->performedOn));
 				if ($row1 = $stmt1->fetchObject()) {
-					$tableName = $row1->name . 'Chatroom';
+					$tableName = str_replace(' ', '', $row1->name) . 'Chatroom';
 					$query2 = "SELECT message FROM $tableName WHERE actionID = :actionid";
 					$stmt = $dbConn->prepare($query2);
 					$stmt->execute(array(':actionid' => $comment->id));
 					if ($row2 = $stmt->fetchObject()) {
-						return $row2->message;
+						return "$row1->name: $row2->message";
 					} else {
 						return "Sent a message.";
 					}
@@ -499,7 +499,7 @@ function handleChatMessage()
 				// adds a record of the new message to the actions table
 				// then sends the message to the chatroom table
 
-				$tableName = $queryResult->name . 'Chatroom';
+				$tableName = str_replace(' ', '', $queryResult->name) . 'Chatroom';
 				$query = "INSERT INTO actions VALUES (null, 8, :sender, NOW(), :productID); INSERT INTO $tableName SELECT null, :productID, :sender, performedAt, :chatMessage, id FROM actions WHERE performedOn = :productID AND userId = :sender ORDER BY performedAt DESC LIMIT 1;";
 				$stmt = $dbConn->prepare($query);
 				$stmt->execute(array(':productID' => $_GET['id'], ':sender' => $_SESSION['id'], ':chatMessage' => $_POST['chatText']));
@@ -529,7 +529,7 @@ function buildOneConversation($productID)
 		$stmt = $dbConn->prepare($query);
 		$stmt->execute(array(':productid' => $productID));
 		if ($queryResult = $stmt->fetchObject()) {
-			$tableName = $queryResult->name . 'Chatroom';
+			$tableName = str_replace(' ', '', $queryResult->name) . 'Chatroom';
 			$query = "SELECT message, sentAt, sender, firstname, lastname, jobTitle FROM $tableName JOIN members ON user_id=sender ORDER BY sentAt DESC LIMIT 50";
 			$stmt = $dbConn->prepare($query);
 			$stmt->execute();

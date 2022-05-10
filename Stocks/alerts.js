@@ -71,7 +71,7 @@ function UpdateMembers(userID) {
       accounts: accounts,
       stocks: stocks,
     }).done(function () {
-      // location.assign("alerts.php");
+      location.assign("alerts.php");
     });
   }
 }

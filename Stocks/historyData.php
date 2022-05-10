@@ -5,7 +5,7 @@ require('../functions.php');
 initSession();
 checkSession('../login.php', false);
 
-$tableName = $_POST['name'] . 'History';
+$tableName = str_replace(' ', '', $_POST['name']) . 'History';
 
 $labels = array();
 $amounts = array();

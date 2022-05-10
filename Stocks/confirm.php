@@ -5,8 +5,8 @@ initSession();
 
 if (isset($_POST['name'])) {
   $category = $_POST['category'] === 'None' ? null : $_POST['category'];
-  $ChatroomName = $_POST['name'] . 'Chatroom';
-  $HistoryName = $_POST['name'] . 'History';
+  $ChatroomName = str_replace(' ', '', $_POST['name']) . 'Chatroom';
+  $HistoryName = str_replace(' ', '', $_POST['name']) . 'History';
 
 
 

@@ -3,8 +3,8 @@
 require('../functions.php');
 initSession();
 
-$ChatroomName = $_POST['name'] . 'Chatroom';
-$HistoryName = $_POST['name'] . 'History';
+$ChatroomName = str_replace(' ', '', $_POST['name']) . 'Chatroom';
+$HistoryName = str_replace(' ', '', $_POST['name']) . 'History';
 
 // Deletes all the information related to a product.
 

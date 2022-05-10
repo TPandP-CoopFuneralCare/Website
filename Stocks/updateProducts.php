@@ -22,7 +22,7 @@ try {
     ':isactive' => $isActive
   ));
   if ($item = $stmt->fetchObject()) {
-    $tableName = $item->name . 'History';
+    $tableName = str_replace(' ', '', $item->name) . 'History';
     $query = "INSERT INTO $tableName VALUES (null, :productid, NOW(), :newAmount, :userid, null);";
     $stmt = $dbConn->prepare($query);
     $stmt->execute(array(

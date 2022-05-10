@@ -5,8 +5,8 @@ initSession();
 
 if (isset($_POST['username'])) {
 
-  $accounts = $_POST['accounts'] === 'true' ? 1 : 0;
-  $stocks = $_POST['stocks'] == 'true' ? 1 : 0;
+  $accounts = isset($_POST['accounts']) ? 1 : 0;
+  $stocks = isset($_POST['stocks']) ? 1 : 0;
   $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
   try {
@@ -28,7 +28,7 @@ if (isset($_POST['username'])) {
 
     try {
       $dbConn = getConnection();
-      $query = "INSERT INTO members VALUES (null, :username, :firstname, :lastname, :passwordHash, :canCreateAccounts, :canManageStocks, :jobTitle);
+      $query = "INSERT INTO members VALUES (null, :username, :firstname, :lastname, :jobTitle, :passwordHash, :canCreateAccounts, :canManageStocks);
     INSERT INTO actions VALUES (null, 9, :userid, NOW(), null)";
       $stmt = $dbConn->prepare($query);
       $stmt->execute(array(':username' => $_POST['username'], ':firstname' => $_POST['firstname'], ':lastname' => $_POST['lastname'], ':passwordHash' => $passwordHash, ':canCreateAccounts' => $accounts, ':canManageStocks' => $stocks, ':jobTitle' => $_POST['jobtitle'], 'userid' => $_SESSION['id']));
