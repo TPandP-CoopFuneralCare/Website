@@ -32,7 +32,7 @@ checkSession('login.php', false);
       </a>
     </li>
     <li id="">
-      <a href="">
+      <a href="./care.php">
         <img src="./Icons/care_and_prep.svg" alt="Care and prep icon" />
         <label>Care and Preparation</label>
       </a>
@@ -79,7 +79,7 @@ checkSession('login.php', false);
       </a>
     </li>
     <li id="">
-      <a href="">
+      <a href="./care.php">
         <img src="./Icons/care_and_prep.svg" alt="Care and prep icon" />
         <label>Care and Preparation</label>
       </a>
