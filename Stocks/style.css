@@ -297,6 +297,9 @@ select {
   height: 50px;
   border: none;
   margin: 16px;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: black;
 }
 
 .message {
@@ -341,13 +344,15 @@ select {
 
 #basket .top {
   padding: 0 24px;
+  text-align: center;
 }
 
 #amount {
   display: flex;
   justify-content: center;
   gap: 24px;
-  padding: 16px 0;
+  /* padding: 16px 0; */
+  align-items: center;
 }
 
 #amount button {
@@ -361,7 +366,8 @@ select {
 }
 
 #basket #amount label {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  margin-bottom: 5px;
 }
 
 #cancel {
@@ -370,6 +376,7 @@ select {
   background-color: #D6333B;
   padding: 8px 0;
   border-radius: 0 0 16px 16px;
+  margin: 0;
 }
 
 #basket aside {
@@ -429,6 +436,8 @@ select {
   background-color: white;
   font-size: 1.3em;
   align-items: center;
+  color: black;
+  margin: 0;
 }
 
 #basket form button>img {
@@ -438,7 +447,7 @@ select {
 
 .grid {
 
-  max-width: 666px;
+
   display: grid;
   margin: 0 auto;
   grid-template-columns: auto auto auto auto auto auto;
@@ -446,6 +455,8 @@ select {
   background-color: white;
   padding: 8px;
   border: 1px solid #6a6a6a5e;
+  align-items: center;
+  justify-items: center;
 }
 
 .grid p {
@@ -460,7 +471,7 @@ select {
 
 .gridMembers {
   grid-template-columns: auto auto auto auto auto auto auto auto;
-  max-width: 800px;
+
 }
 
 .productName {
@@ -474,6 +485,7 @@ select {
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 #accountForm {
@@ -495,4 +507,17 @@ select {
 #accountForm>input {
 
   text-align: center;
+}
+
+#logoutButton {
+  margin: 80px auto;
+}
+
+button {
+  background-color: #01B1DD;
+  color: white;
+  padding: 13px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
 }

@@ -1,0 +1,304 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+    /* background-color: #172847; */
+    background: linear-gradient(90deg, #6a6a6a 15%, #FFFFFF 85%);
+    display: flex;
+}
+
+/* Nav section of the dashboard (left)*/
+
+nav {
+    width: 180px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul li {
+    position: relative;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    margin: 16px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+nav>ul>li img {
+    width: 25%;
+    margin-bottom: 8px;
+}
+
+#account {
+    height: 100px;
+    width: 100px;
+}
+
+#logo {
+    height: 100px;
+    width: 100px;
+}
+
+#stocks {
+    visibility: hidden;
+    padding: 0;
+    background-color: #6a6a6a;
+    /* background-color: #172847; */
+}
+
+#stocks:hover,
+nav a:hover~#stocks {
+    visibility: visible;
+}
+
+#stocks li {
+    padding: 8px 8px;
+    margin: 0;
+}
+
+#stocks a:hover {
+    background-color: #01B1DD;
+}
+
+/* Main section of the dashboard (right)*/
+
+main {
+
+    width: 100%;
+    /* background-color: #F9F5F5; */
+    background-color: #f9f9f9;
+
+
+
+
+}
+
+/* Full-width inputs */
+#search [type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #01B1DD;
+    color: white;
+    padding: 13px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    height: 100px;
+    width: 100px;
+
+    margin-right: 50%;
+    margin-left: 15px;
+    margin-top: 15px;
+    z-index: 1;
+    /*Stays on top*/
+    top: 0;
+
+}
+
+/* Add padding to containers */
+.container {
+    padding: 45px;
+    margin-left: 50%;
+    margin-top: 7%
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+.sidebar {
+    height: 1000px;
+    width: 160px;
+    top: 0;
+    background-color: #6a6a6a;
+    overflow-x: hidden;
+    /*no horizontal scroll*/
+    position: sticky;
+    float: left;
+
+}
+
+.right {
+    float: left;
+    height: 1920px;
+    width: 1080px;
+    padding-top: 50px;
+    padding-left: 50px;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #cccccc;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+.logout a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #cccccc;
+    display: block;
+    margin-bottom: 5%;
+
+}
+
+.logout a:hover {
+    color: white;
+}
+
+.logout {
+    position: sticky;
+}
+
+.search input[type=text] {
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid grey;
+    width: 100%;
+    background: #f1f1f1;
+}
+
+.search a.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+.search .search-container button {
+    float: right;
+    width: 9%;
+    padding: 8px;
+    background: #2196F3;
+    color: white;
+    border: 1px solid grey;
+    border-left: none;
+    /* Prevent double borders */
+    cursor: pointer;
+}
+
+.search button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.search_position {
+    float: right;
+    margin-right: 30%;
+}
+
+
+
+
+
+
+
+button #service {
+    padding-left: 50%;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 20px;
+}
+
+#booknum {
+    width: 20px;
+}

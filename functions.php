@@ -148,20 +148,28 @@ function buildNav()
     <img src="../coop-logo.png" alt="Coop logo" id="logo" />
     <ul>
       <li id="">
-        <img src="" alt="Funeral icon" />
-        <label>Funeral Arrangements</label>
+				<a href="">
+					<img src="../Icons/funeral_arrangements.svg" alt="Funeral icon" />
+					<label>Funeral Arrangements</label>
+				</a>
       </li>
       <li id="">
-        <img src="" alt="Care and prep icon" />
-        <label>Care and Preparation</label>
+				<a href="">
+					<img src="../Icons/care_and_prep.svg" alt="Care and prep icon" />
+					<label>Care and Preparation</label>
+				</a>
       </li>
       <li id="">
-        <img src="" alt="Timetable image" />
-        <label>Timetable</label>
+				<a href="">
+					<img src="../Icons/timetable.svg" alt="Timetable icon" />
+					<label>Timetable</label>
+				</a>
       </li>
       <li id="">
-        <img src="" alt="Fleet image" />
-        <label>Fleet</label>
+				<a href="../fleet.php">
+					<img src="../Icons/fleet.svg" alt="Fleet icon" />
+					<label>Fleet</label>
+				</a>
       </li>
       
         <li id="">
@@ -185,22 +193,29 @@ function buildNav()
 	} else {
 		return '<nav>
     <img src="../coop-logo.png" alt="Coop logo" id="logo" />
-    <ul>
-      <li id="">
-        <img src="" alt="Funeral icon" />
-        <label>Funeral Arrangements</label>
+    <li id="">
+				<a href="">
+					<img src="../Icons/funeral_arrangements.svg" alt="Funeral icon" />
+					<label>Funeral Arrangements</label>
+				</a>
       </li>
       <li id="">
-        <img src="" alt="Care and prep icon" />
-        <label>Care and Preparation</label>
+				<a href="">
+					<img src="../Icons/care_and_prep.svg" alt="Care and prep icon" />
+					<label>Care and Preparation</label>
+				</a>
       </li>
       <li id="">
-        <img src="" alt="Timetable image" />
-        <label>Timetable</label>
+				<a href="">
+					<img src="../Icons/timetable.svg" alt="Timetable icon" />
+					<label>Timetable</label>
+				</a>
       </li>
       <li id="">
-        <img src="" alt="Fleet image" />
-        <label>Fleet</label>
+				<a href="../fleet.php">
+					<img src="../Icons/fleet.svg" alt="Fleet icon" />
+					<label>Fleet</label>
+				</a>
       </li>
       
         <li id="">

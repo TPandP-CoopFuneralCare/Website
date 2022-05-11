@@ -130,7 +130,8 @@ checkSession('../login.php', false);
       label: 'Stocks',
       data: jsonData["amounts"].map(function(amount) {
         return parseInt(amount);
-      })
+      }),
+      backgroundColor: "rgb(1, 177, 221)",
     });
 
     liveChart.update()
@@ -162,7 +163,8 @@ checkSession('../login.php', false);
       label: 'Stocks',
       data: jsonData["amounts"].map(function(amount) {
         return parseInt(amount);
-      })
+      }),
+      borderColor: "rgb(1, 177, 221)",
     });
 
     historyChart.update()

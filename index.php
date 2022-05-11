@@ -25,20 +25,28 @@ checkSession('login.php', false);
   <img src="./coop-logo.png" alt="Coop logo" id="logo" />
   <ul>
     <li id="">
-      <img src="" alt="Funeral icon" />
-      <label>Funeral Arrangements</label>
+      <a href="">
+        <img src="./Icons/funeral_arrangements.svg" alt="Funeral icon" />
+        <label>Funeral Arrangements</label>
+      </a>
     </li>
     <li id="">
-      <img src="" alt="Care and prep icon" />
-      <label>Care and Preparation</label>
+      <a href="">
+        <img src="./Icons/care_and_prep.svg" alt="Care and prep icon" />
+        <label>Care and Preparation</label>
+      </a>
     </li>
     <li id="">
-      <img src="" alt="Timetable image" />
-      <label>Timetable</label>
+      <a href="">
+        <img src="./Icons/timetable.svg" alt="Timetable icon" />
+        <label>Timetable</label>
+      </a>
     </li>
     <li id="">
-      <img src="" alt="Fleet image" />
-      <label>Fleet</label>
+      <a href="./fleet.php">
+        <img src="./Icons/fleet.svg" alt="Fleet icon" />
+        <label>Fleet</label>
+      </a>
     </li>
     
       <li id="">
@@ -55,51 +63,60 @@ checkSession('login.php', false);
       </li>
   </ul>
   <a href="./account.php" id="account">
-						<img src="./Icons/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="Account icon" />
-						<label>Account</label>
-					</a>
+    <img src="./Icons/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="Account icon" />
+    <label>Account</label>
+  </a>
 </nav>';
   } else {
     echo '<nav>
   <img src="./coop-logo.png" alt="Coop logo" id="logo" />
   <ul>
     <li id="">
-      <img src="" alt="Funeral icon" />
-      <label>Funeral Arrangements</label>
+      <a href="">
+        <img src="./Icons/funeral_arrangements.svg" alt="Funeral icon" />
+        <label>Funeral Arrangements</label>
+      </a>
     </li>
     <li id="">
-      <img src="" alt="Care and prep icon" />
-      <label>Care and Preparation</label>
+      <a href="">
+        <img src="./Icons/care_and_prep.svg" alt="Care and prep icon" />
+        <label>Care and Preparation</label>
+      </a>
     </li>
     <li id="">
-      <img src="" alt="Timetable image" />
-      <label>Timetable</label>
+      <a href="">
+        <img src="./Icons/timetable.svg" alt="Timetable icon" />
+        <label>Timetable</label>
+      </a>
     </li>
     <li id="">
-      <img src="" alt="Fleet image" />
-      <label>Fleet</label>
-    </li>
-    
-      <li id="">
-        <a href="./Stocks/index.php">
-          <img src="./Icons/box.png" alt="Stocks icon" />
-          <label>Stocks</label>
-        </a>
+      <a href="./fleet.php">
+        <img src="./Icons/fleet.svg" alt="Fleet icon" />
+        <label>Fleet</label>
+      </a>
+    </li>    
+    <li id="">
+      <a href="./Stocks/index.php">
+        <img src="./Icons/box.png" alt="Stocks icon" />
+        <label>Stocks</label>
+      </a>
 
-        <ul id="stocks">
-          <a href="./Stocks/conversation.php"><li>Conversations</li></a>
-        </ul>
-      </li>
+      <ul id="stocks">
+        <a href="./Stocks/conversation.php"><li>Conversations</li></a>
+      </ul>
+    </li>
   </ul>
   <a href="./account.php" id="account">
-						<img src="./Icons/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="Account icon" />
-						<label>Account</label>
-					</a>
+    <img src="./Icons/account_circle_FILL0_wght400_GRAD0_opsz48.svg" alt="Account icon" />
+    <label>Account</label>
+  </a>
 </nav>';
   }
 
   ?>
   <main>
+    <h1>Welcome to Sentinel</h1>
+    <p>This is a new system for Coop funeral. Select a section to begin.</p>
 
   </main>
 </body>

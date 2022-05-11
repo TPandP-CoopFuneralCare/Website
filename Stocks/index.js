@@ -35,6 +35,7 @@ function selectLiveCategory() {
           data: jsonData["amounts"].map(function (amount) {
             return parseInt(amount);
           }),
+          backgroundColor: "rgb(1, 177, 221)",
         });
 
         liveChart.update();
@@ -80,6 +81,7 @@ function selectProduct() {
             data: jsonData["amounts"].map(function (amount) {
               return parseInt(amount);
             }),
+            borderColor: "rgb(1, 177, 221)",
           });
 
           historyChart.update();
