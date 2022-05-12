@@ -135,7 +135,7 @@ checkSession('login.php', false);
         <p>Current Location: [Placeholder]</p>
         <p>Transfer Location: [Placeholder]</p>
         <p>Unique ID:</p>
-        <button onclick="document.location='DeceasedDetails.php'">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
       <div class="grid-item2">
         <p>Deceased Name: [Placeholder]</p>
@@ -144,7 +144,7 @@ checkSession('login.php', false);
         <p>Current Location: [Placeholder]</p>
         <p>Transfer Location: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
       <div class="grid-item3">
         <p>Deceased Name: [Placeholder]</p>
@@ -153,7 +153,7 @@ checkSession('login.php', false);
         <p>Current Location: [Placeholder]</p>
         <p>Transfer Location: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
     </div>
     <div class="h">
@@ -167,7 +167,7 @@ checkSession('login.php', false);
         <p>Date of Funeral: [Placeholder]</p>
         <p>Current Location: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
       <div class="grid-item5">
         <p>Deceased Name: [Placeholder]</p>
@@ -176,7 +176,7 @@ checkSession('login.php', false);
         <p>Date of Funeral: [Placeholder]</p>
         <p>Current Location: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
       <div class="grid-item6">
         <p>Deceased Name: [Placeholder]</p>
@@ -185,7 +185,7 @@ checkSession('login.php', false);
         <p>Date of Funeral: [Placeholder]</p>
         <p>Current Location: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
     </div>
     <div class="h">
@@ -199,7 +199,7 @@ checkSession('login.php', false);
         <p>Current Location: [Placeholder]</p>
         <p>Coffin in Stock: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
       <div class="grid-item8">
         <p>Deceased Name: [Placeholder]</p>
@@ -208,7 +208,7 @@ checkSession('login.php', false);
         <p>Current Location: [Placeholder]</p>
         <p>Coffin in Stock: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
       <div class="grid-item9">
         <p>Deceased Name: [Placeholder]</p>
@@ -217,7 +217,7 @@ checkSession('login.php', false);
         <p>Current Location: [Placeholder]</p>
         <p>Coffin in Stock: [Placeholder]</p>
         <p>Unique ID: [Placeholder]</p>
-        <button type="button">Open...</button>
+        <button onclick="document.location='deceasedDetails.php'">Open...</button>
       </div>
     </div>
   </main>
