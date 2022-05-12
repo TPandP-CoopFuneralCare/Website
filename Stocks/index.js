@@ -60,6 +60,10 @@ function selectProduct() {
     document.getElementById("editStock").onfocusout = function () {
       updateManualInput(selectElement.value);
     };
+
+    updateEditStock(
+      parseInt(selectElement.options[selectElement.selectedIndex].value)
+    );
   } else {
     // If the user does have the Stock Management rights
 

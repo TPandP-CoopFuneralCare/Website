@@ -114,7 +114,6 @@ checkSession('../login.php', false);
 <script>
   // Handles the display of the charts
   var liveChartElement = document.getElementById('liveChart').getContext('2d');
-  var historyChartElement = document.getElementById('historyChart').getContext('2d');
 
   // Needs to retrieve the data from livestocks
   var liveChart;
@@ -148,40 +147,43 @@ checkSession('../login.php', false);
     type: 'bar',
   });
 
-  // Needs to retrieve the data from the history
-  var historyChart;
-  var historyData = {
-    'labels': [],
-    'amounts': []
-  };
+  if (document.getElementById('historyChart') !== null) {
+    var historyChartElement = document.getElementById('historyChart').getContext('2d');
+    // Needs to retrieve the data from the history
+    var historyChart;
+    var historyData = {
+      'labels': [],
+      'amounts': []
+    };
 
-  function onReceiveHistory(data) {
-    console.log(data);
-    jsonData = JSON.parse(data);
-    historyChart.data.labels = jsonData["labels"];
-    historyChart.data.datasets.push({
-      label: 'Stocks',
-      data: jsonData["amounts"].map(function(amount) {
-        return parseInt(amount);
-      }),
-      borderColor: "rgb(1, 177, 221)",
+    function onReceiveHistory(data) {
+      console.log(data);
+      jsonData = JSON.parse(data);
+      historyChart.data.labels = jsonData["labels"];
+      historyChart.data.datasets.push({
+        label: 'Stocks',
+        data: jsonData["amounts"].map(function(amount) {
+          return parseInt(amount);
+        }),
+        borderColor: "rgb(1, 177, 221)",
+      });
+
+      historyChart.update()
+    }
+
+    var element = document.getElementById('productID');
+    var name = element.options[element.selectedIndex].text;
+    if (productID !== undefined && productID !== null && productID !== '') {
+      $.post('historyData.php', {
+        name: name
+      }, onReceiveHistory);
+    }
+
+    // puts the data into the history chart
+    historyChart = new Chart(historyChartElement, {
+      type: 'line',
     });
-
-    historyChart.update()
   }
-
-  var element = document.getElementById('productID');
-  var name = element.options[element.selectedIndex].text;
-  if (productID !== undefined && productID !== null && productID !== '') {
-    $.post('historyData.php', {
-      name: name
-    }, onReceiveHistory);
-  }
-
-  // puts the data into the history chart
-  historyChart = new Chart(historyChartElement, {
-    type: 'line',
-  });
 </script>
 
 </html>

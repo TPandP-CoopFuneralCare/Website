@@ -193,6 +193,7 @@ function buildNav()
 	} else {
 		return '<nav>
     <img src="../coop-logo.png" alt="Coop logo" id="logo" />
+		<ul>
     <li id="">
 				<a href="">
 					<img src="../Icons/funeral_arrangements.svg" alt="Funeral icon" />
